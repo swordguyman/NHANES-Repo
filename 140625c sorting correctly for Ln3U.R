@@ -5,7 +5,7 @@ file=file.choose()
 file
 data=read.csv(file, header=T)
 ncols=ncol(data)
-B=10
+B=1000
 BIC= AIC =LL=array(0,c(ncols,B,6))
 minBIC=minAIC=maxLL= matrix(rep(0,ncols*B), nrow=ncols, ncol=B,byrow=T)
 frac= array(0,c(ncols,B,10))

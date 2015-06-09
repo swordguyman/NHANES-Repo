@@ -191,31 +191,31 @@ final <- final[order(final$YEAR, final$LBDGLUSI),]
 #create percentile variable column, relative to each year
 
 for(i in min(which(final$YEAR=='99-00')):max(which(final$YEAR=='99-00'))){
-	final[i, 29] <- (final[i, 2]-.5)/sum(final$YEAR=='99-00')
+	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='99-00'))
 }
 
 for(i in min(which(final$YEAR=='01-02')):max(which(final$YEAR=='01-02'))){
-	final[i, 29] <- (final[i, 2]-.5)/sum(final$YEAR=='01-02')
+	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='01-02'))
 }
 
 for(i in min(which(final$YEAR=='03-04')):max(which(final$YEAR=='03-04'))){
-	final[i, 29] <- (final[i, 2]-.5)/sum(final$YEAR=='03-04')
+	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='03-04'))
 }
 
 for(i in min(which(final$YEAR=='05-06')):max(which(final$YEAR=='05-06'))){
-	final[i, 29] <- (final[i, 2]-.5)/sum(final$YEAR=='05-06')
+	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='05-06'))
 }
 
 for(i in min(which(final$YEAR=='07-08')):max(which(final$YEAR=='07-08'))){
-	final[i, 29] <- (final[i, 2]-.5)/sum(final$YEAR=='07-08')
+	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='07-08'))
 }
 
 for(i in min(which(final$YEAR=='09-10')):max(which(final$YEAR=='09-10'))){
-	final[i, 29] <- (final[i, 2]-.5)/sum(final$YEAR=='09-10')
+	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='09-10'))
 }
 
 for(i in min(which(final$YEAR=='11-12')):max(which(final$YEAR=='11-12'))){
-	final[i, 29] <- (final[i, 2]-.5)/sum(final$YEAR=='11-12')
+	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='11-12'))
 }
 
 colnames(final)[29] <- 'PERCENT'
@@ -224,9 +224,8 @@ one_over_trans = function() trans_new("one_over", function(x) qnorm(x), function
 
 #-----------------------------------Plot cumulative fasting blood glucose by YEAR
 ggplot(final, aes(x=final$LBDGLUSI, color=YEAR)) + 
-geom_point(aes(y=final$PERCENT), stat='ecdf') +
+geom_point(aes(y=final$PERCENT)) +
 xlab(expression(paste('Serum Glucose mM'))) + 
 ylab('Fraction of the Population') +
 ggtitle('NHANES Fasting Blood Glucose') +
-scale_x_log10() +
-scale_y_continuous(trans='one_over')
+scale_x_log10()

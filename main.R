@@ -188,44 +188,59 @@ final <- final[!is.na(final[2]),]
 #sort by year then fasting blood glucose ascending
 final <- final[order(final$YEAR, final$LBDGLUSI),]
 
-#create percentile variable column, relative to each year
+#normalize data relative to glucose
 
+M <- mean(final[final$YEAR=='99-00', 2])
+SD <- sd(final[final$YEAR=='99-00', 2])
 for(i in min(which(final$YEAR=='99-00')):max(which(final$YEAR=='99-00'))){
-	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='99-00'))
+	final[i, 29] <- (final[i,2]-M)/SD
 }
 
+M <- mean(final[final$YEAR=='01-02', 2])
+SD <- sd(final[final$YEAR=='01-02', 2])
 for(i in min(which(final$YEAR=='01-02')):max(which(final$YEAR=='01-02'))){
-	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='01-02'))
+	final[i, 29] <- (final[i,2]-M)/SD
 }
 
+M <- mean(final[final$YEAR=='03-04', 2])
+SD <- sd(final[final$YEAR=='03-04', 2])
 for(i in min(which(final$YEAR=='03-04')):max(which(final$YEAR=='03-04'))){
-	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='03-04'))
+	final[i, 29] <- (final[i,2]-M)/SD
 }
 
+M <- mean(final[final$YEAR=='05-06', 2])
+SD <- sd(final[final$YEAR=='05-06', 2])
 for(i in min(which(final$YEAR=='05-06')):max(which(final$YEAR=='05-06'))){
-	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='05-06'))
+	final[i, 29] <- (final[i,2]-M)/SD
 }
 
+M <- mean(final[final$YEAR=='07-08', 2])
+SD <- sd(final[final$YEAR=='07-08', 2])
 for(i in min(which(final$YEAR=='07-08')):max(which(final$YEAR=='07-08'))){
-	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='07-08'))
+	final[i, 29] <- (final[i,2]-M)/SD
 }
 
+M <- mean(final[final$YEAR=='09-10', 2])
+SD <- sd(final[final$YEAR=='09-10', 2])
 for(i in min(which(final$YEAR=='09-10')):max(which(final$YEAR=='09-10'))){
-	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='09-10'))
+	final[i, 29] <- (final[i,2]-M)/SD
 }
 
+M <- mean(final[final$YEAR=='11-12', 2])
+SD <- sd(final[final$YEAR=='11-12', 2])
 for(i in min(which(final$YEAR=='11-12')):max(which(final$YEAR=='11-12'))){
-	final[i, 29] <- qnorm((final[i, 2]-.5)/sum(final$YEAR=='11-12'))
+	final[i, 29] <- (final[i,2]-M)/SD
 }
 
-colnames(final)[29] <- 'PERCENT'
+colnames(final)[29] <- 'ZSCORE'
 
 one_over_trans = function() trans_new("one_over", function(x) qnorm(x), function(x) pnorm(x))
 
 #-----------------------------------Plot cumulative fasting blood glucose by YEAR
-ggplot(final, aes(x=final$LBDGLUSI, color=YEAR)) + 
-geom_point(aes(y=final$PERCENT)) +
-xlab(expression(paste('Serum Glucose mM'))) + 
-ylab('Fraction of the Population') +
+ggplot(final, aes(sample=final$LBDGLUSI, color=YEAR)) + 
+stat_qq(x=sample) +
+ylab(expression(paste('Serum Glucose mM'))) + 
+xlab('Standard Deviation or Z Score') +
 ggtitle('NHANES Fasting Blood Glucose') +
-scale_x_log10()
+coord_flip() +
+scale_y_log10()

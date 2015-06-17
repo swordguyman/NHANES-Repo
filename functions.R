@@ -56,3 +56,67 @@ add_variable_frame <- function(frame, variable, value){
 
 	return(new_frame)	
 }
+
+
+
+#-----------------------------------Split YEAR variable string by '-' and replace with '_'
+split_YEAR <- function(vector){
+	new_vector <- vector()
+
+	for(i in 1:length(vector)){
+		splitted <- strsplit(vector[i], '-')
+		new_vector[i] <- paste(splitted[[1]][1], '_', splitted[[1]][2], sep='')
+	}
+	
+	return(new_vector)
+}
+
+
+
+#-----------------------------------Split final data frame's variables by year for IGOR
+IGOR_frame <- function(frame){
+	#initialize data.frame with SEQN column
+	new_frame <- data.frame(SEQN=frame$SEQN)
+
+	#split elements
+	splits <- unique(frame$YEAR)
+
+	#number of times to split each variable
+	split_number <- length(splits)
+	
+	#get name vector for each split; back portion of new variable name
+	new_names <- split_YEAR(splits)
+
+	#total number of variables
+	total <- length(colnames(final))
+
+	#variable SEQN, column 1, does not need to be split
+	#variable YEAR, last column, does not need to be split
+	for(i in 2:(total-1)){
+		#initialize indices
+		start <- 0
+		end <- 0
+
+		for(j in 1:split_number){
+			#new column index
+			new_index <- (j+1)+((i-2)*split_number)
+
+			#initialize NA column
+			new_frame[,new_index] <- rep(NA, nrow(frame))
+
+			#name new column
+			old_var_name <- colnames(frame)[i]
+			colnames(new_frame)[new_index] <- 
+			paste(old_var_name, '_',  new_names[j], sep='')
+
+			#update indices
+			start <- 1 + end
+			end <- end + sum(frame$YEAR == splits[j])
+
+			#update frame variable info to new column
+			new_frame[start:end, new_index] <- frame[start:end, i]
+		}
+	}
+
+	return(new_frame)
+}

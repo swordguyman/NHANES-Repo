@@ -31,14 +31,15 @@ A.glucose <- exception_frame(A.glucose, "PHAFSTMN")
 A.glucose <- exception_frame(A.glucose, "PHAFSTHR")
 A.tri <- NHANES.1112.Trigly.df
 A.gly <- NHANES.1112.Glycohemo.df
+A.cad <- NHANES.1112.Cadmium.df
 A.zinc <- NHANES.1112.Zinc.df
 A.fq <- NHANES.1112.FastQuest.df
 A.bm <- NHANES.1112.BM.df
 A.bp <- NHANES.1112.BP.df
 A.diq <- NHANES.1112.DIQ.df
-A <- merge_frame(list(A.demo, A.glucose, A.tri, A.gly, A.zinc, A.fq, A.bm, A.bp,
+A <- merge_frame(list(A.demo, A.glucose, A.tri, A.gly, A.cad, A.zinc, A.fq, A.bm, A.bp,
 A.diq), c("SEQN"))
-A <- extract_frame(A, c("SEQN", "LBDGLUSI", "LBDINSI", "LBDTRSI", "LBXGH", "PHAFSTMN", 
+A <- extract_frame(A, c("SEQN", "LBDGLUSI", "LBDINSI", "LBDTRSI", "LBXGH", "LBDBCDSI", "PHAFSTMN", 
 "PHAFSTHR", "BMXWT", "BMXHT", "BMXBMI", "BMXWAIST", "BPXSY3", "BPXDI3", "RIAGENDR", 
 "RIDAGEYR", "RIDRETH1", "INDFMIN2", "INDFMPIR", "DID040", "DID060", "DIQ050",  "DIQ070", 
 "DIQ160", "DIQ170", "LBDSZNSI", "RIDRETH3", "RIDEXAGY"))
@@ -51,13 +52,14 @@ B.glucose <- exception_frame(B.glucose, "PHAFSTMN")
 B.glucose <- exception_frame(B.glucose, "PHAFSTHR")
 B.tri <- NHANES.0910.Trigly.df
 B.gly <- NHANES.0910.Glycohemo.df
+B.cad <- NHANES.0910.Cadmium.df
 B.fq <- NHANES.0910.FastQuest.df
 B.bm <- NHANES.0910.BM.df
 B.bp <- NHANES.0910.BP.df
 B.diq <- NHANES.0910.DIQ.df
-B <- merge_frame(list(B.demo, B.glucose, B.tri, B.gly, B.fq, B.bm, B.bp,
+B <- merge_frame(list(B.demo, B.glucose, B.tri, B.gly, B.cad, B.fq, B.bm, B.bp,
 B.diq), c("SEQN"))
-B <- extract_frame(B, c("SEQN", "LBDGLUSI", "LBDINSI", "LBDTRSI", "LBXGH", "PHAFSTMN",
+B <- extract_frame(B, c("SEQN", "LBDGLUSI", "LBDINSI", "LBDTRSI", "LBXGH", "LBDBCDSI", "PHAFSTMN",
 "PHAFSTHR", "BMXWT", "BMXHT", "BMXBMI", "BMXWAIST", "BPXSY3", "BPXDI3", "RIAGENDR", 
 "RIDAGEYR", "RIDRETH1", "INDFMIN2", "INDFMPIR", "DID040", "DID060", "DIQ050", "DIQ070",
 "DIQ160", "DIQ170"))
@@ -74,13 +76,14 @@ C.glucose <- exception_frame(C.glucose, "PHAFSTMN")
 C.glucose <- exception_frame(C.glucose, "PHAFSTHR")
 C.tri <- NHANES.0708.Trigly.df
 C.gly <- NHANES.0708.Glycohemo.df
+C.cad <- NHANES.0708.Cadmium.df
 C.fq <- NHANES.0708.FastQuest.df
 C.bm <- NHANES.0708.BM.df
 C.bp <- NHANES.0708.BP.df
 C.diq <- NHANES.0708.DIQ.df
-C <- merge_frame(list(C.demo, C.glucose, C.tri, C.gly, C.fq, C.bm, C.bp,
+C <- merge_frame(list(C.demo, C.glucose, C.tri, C.gly, C.cad, C.fq, C.bm, C.bp,
 C.diq), c("SEQN"))
-C <- extract_frame(C, c("SEQN", "LBDGLUSI", "LBDINSI", "LBDTRSI", "LBXGH", "PHAFSTMN", 
+C <- extract_frame(C, c("SEQN", "LBDGLUSI", "LBDINSI", "LBDTRSI", "LBXGH", "LBDBCDSI", "PHAFSTMN", 
 "PHAFSTHR", "BMXWT", "BMXHT", "BMXBMI", "BMXWAIST", "BPXSY3", "BPXDI3", "RIAGENDR", 
 "RIDAGEYR", "RIDRETH1", "INDFMIN2", "INDFMPIR", "DID040", "DID060", "DIQ050", "DID070",
 "DIQ160", "DIQ170"))
@@ -97,13 +100,14 @@ D.glucose <- exception_frame(D.glucose, "PHAFSTMN")
 D.glucose <- exception_frame(D.glucose, "PHAFSTHR")
 D.tri <- NHANES.0506.Trigly.df
 D.gly <- NHANES.0506.Glycohemo.df
+D.cad <- NHANES.0506.Cadmium.df
 D.fq <- NHANES.0506.FastQuest.df
 D.bm <- NHANES.0506.BM.df
 D.bp <- NHANES.0506.BP.df
 D.diq <- NHANES.0506.DIQ.df
-D <- merge_frame(list(D.demo, D.glucose, D.tri, D.gly, D.fq, D.bm, D.bp,
+D <- merge_frame(list(D.demo, D.glucose, D.tri, D.gly, D.cad, D.fq, D.bm, D.bp,
 D.diq), c("SEQN"))
-D <- extract_frame(D, c("SEQN", "LBDGLUSI", "LBDINSI", "LBDTRSI", "LBXGH", "PHAFSTMN", 
+D <- extract_frame(D, c("SEQN", "LBDGLUSI", "LBDINSI", "LBDTRSI", "LBXGH", "LBDBCDSI", "PHAFSTMN", 
 "PHAFSTHR", "BMXWT", "BMXHT", "BMXBMI", "BMXWAIST", "BPXSY3", "BPXDI3", "RIAGENDR", 
 "RIDAGEYR", "RIDRETH1", "INDFMINC", "INDFMPIR", "DID040", "DID060", "DIQ050", "DID070", 
 "DIQ160", "DIQ170"))
@@ -118,13 +122,14 @@ E.demo <- NHANES.0304.Demo.df
 E.glucose <- NHANES.0304.FastGlu.df
 E.tri <- NHANES.0304.Trigly.df
 E.gly <- NHANES.0304.Glycohemo.df
+E.cad <- NHANES.0304.Cadmium.df
 E.fq <- NHANES.0304.FastQuest.df
 E.bm <- NHANES.0304.BM.df
 E.bp <- NHANES.0304.BP.df
 E.diq <- NHANES.0304.DIQ.df
-E <- merge_frame(list(E.demo, E.glucose, E.tri, E.gly, E.fq, E.bm, E.bp,
+E <- merge_frame(list(E.demo, E.glucose, E.tri, E.gly, E.cad, E.fq, E.bm, E.bp,
 E.diq), c("SEQN"))
-E <- extract_frame(E, c("SEQN", "LBDGLUSI", "LBDINSI", "LBDTRSI", "LBXGH", "PHAFSTMN", 
+E <- extract_frame(E, c("SEQN", "LBDGLUSI", "LBDINSI", "LBDTRSI", "LBXGH", "LBDBCDSI", "PHAFSTMN", 
 "PHAFSTHR", "BMXWT", "BMXHT", "BMXBMI", "BMXWAIST", "BPXSY3", "BPXDI3", "RIAGENDR", 
 "RIDAGEYR", "RIDRETH1", "INDFMINC", "INDFMPIR", "DID040G", "DID060G", "DIQ050", "DIQ070"))
 E <- add_variable_frame(E, "DIQ160", NA)
@@ -140,13 +145,14 @@ F.demo <- NHANES.0102.Demo.df
 F.glucose <- NHANES.0102.FastGlu.df
 F.tri <- NHANES.0102.Trigly.df
 F.gly <- NHANES.0102.Glycohemo.df
+F.cad <- NHANES.0102.Cadmium.df
 F.fq <- NHANES.0102.FastQuest.df
 F.bm <- NHANES.0102.BM.df
 F.bp <- NHANES.0102.BP.df
 F.diq <- NHANES.0102.DIQ.df
-F <- merge_frame(list(F.demo, F.glucose, F.tri, F.gly, F.fq, F.bm, F.bp,
+F <- merge_frame(list(F.demo, F.glucose, F.tri, F.gly, F.cad, F.fq, F.bm, F.bp,
 F.diq), c("SEQN"))
-F <- extract_frame(F, c("SEQN", "LBXGLUSI", "LBXINSI", "LBDTRSI", "LBXGH", "PHAFSTMN", 
+F <- extract_frame(F, c("SEQN", "LBXGLUSI", "LBXINSI", "LBDTRSI", "LBXGH", "LBDBCDSI", "PHAFSTMN", 
 "PHAFSTHR", "BMXWT", "BMXHT", "BMXBMI", "BMXWAIST", "BPXSY3", "BPXDI3", "RIAGENDR", 
 "RIDAGEYR", "RIDRETH1", "INDFMINC", "INDFMPIR", "DID040G", "DID060G", "DIQ050", "DIQ070"))
 F <- add_variable_frame(F, "DIQ160", NA)
@@ -162,13 +168,14 @@ G.demo <- NHANES.9900.Demo.df
 G.glucose <- NHANES.9900.FastGlu.df
 G.tri <- NHANES.9900.Trigly.df
 G.gly <- NHANES.9900.Glycohemo.df
+G.cad <- NHANES.9900.Cadmium.df
 G.fq <- NHANES.9900.FastQuest.df
 G.bm <- NHANES.9900.BM.df
 G.bp <- NHANES.9900.BP.df
 G.diq <- NHANES.9900.DIQ.df
-G <- merge_frame(list(G.demo, G.glucose, G.tri, G.gly, G.fq, G.bm, G.bp,
+G <- merge_frame(list(G.demo, G.glucose, G.tri, G.gly, G.cad, G.fq, G.bm, G.bp,
 G.diq), c("SEQN"))
-G <- extract_frame(G, c("SEQN", "LBXGLUSI", "LBXINSI", "LBDTRSI", "LBXGH", "PHAFSTMN", 
+G <- extract_frame(G, c("SEQN", "LBXGLUSI", "LBXINSI", "LBDTRSI", "LBXGH", "LBDBCDSI", "PHAFSTMN", 
 "PHAFSTHR", "BMXWT", "BMXHT", "BMXBMI", "BMXWAIST", "BPXSY3", "BPXDI3", "RIAGENDR", 
 "RIDAGEYR", "RIDRETH1", "INDFMINC", "INDFMPIR", "DIQ040G", "DIQ060G", "DIQ050", "DIQ070"))
 G <- add_variable_frame(G, "DIQ160", NA)

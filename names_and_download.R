@@ -32,6 +32,8 @@ NHANES.1112.Trigly.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2011-2012/TRIGLY_G.xpt"
 NHANES.1112.Glycohemo.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2011-2012/GHB_G.xpt"
+NHANES.1112.Cadmium.location <-
+"ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2011-2012/PBCD_G.xpt"
 NHANES.1112.FastQuest.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2011-2012/FASTQX_G.xpt"
 
@@ -41,6 +43,8 @@ NHANES.0910.Trigly.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2009-2010/TRIGLY_F.xpt"
 NHANES.0910.Glycohemo.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2009-2010/GHB_F.xpt"
+NHANES.0910.Cadmium.location <-
+"ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2009-2010/PBCD_F.xpt"
 NHANES.0910.FastQuest.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2009-2010/FASTQX_F.xpt"
 
@@ -50,6 +54,8 @@ NHANES.0708.Trigly.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2007-2008/TRIGLY_E.xpt"
 NHANES.0708.Glycohemo.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2007-2008/GHB_E.xpt"
+NHANES.0708.Cadmium.location <-
+"ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2007-2008/PBCD_E.xpt"
 NHANES.0708.FastQuest.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2007-2008/FASTQX_E.xpt"
 
@@ -59,6 +65,8 @@ NHANES.0506.Trigly.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2005-2006/TRIGLY_D.xpt"
 NHANES.0506.Glycohemo.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2005-2006/GHB_D.xpt"
+NHANES.0506.Cadmium.location <-
+"ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2005-2006/PBCD_D.xpt"
 NHANES.0506.FastQuest.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2005-2006/FASTQX_D.xpt"
 
@@ -68,6 +76,8 @@ NHANES.0304.Trigly.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2003-2004/L13AM_C.xpt"
 NHANES.0304.Glycohemo.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2003-2004/L10_C.xpt"
+NHANES.0304.Cadmium.location <-
+"ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2003-2004/L06BMT_C.xpt"
 NHANES.0304.FastQuest.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2003-2004/PH_C.xpt"
 
@@ -77,6 +87,8 @@ NHANES.0102.Trigly.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2001-2002/L13AM_B.xpt"
 NHANES.0102.Glycohemo.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2001-2002/L10_B.xpt"
+NHANES.0102.Cadmium.location <-
+"ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2001-2002/L06_B.xpt"
 NHANES.0102.FastQuest.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/2001-2002/PH_B.xpt"
 
@@ -86,6 +98,8 @@ NHANES.9900.Trigly.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/1999-2000/LAB13AM.xpt"
 NHANES.9900.Glycohemo.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/1999-2000/LAB10.xpt"
+NHANES.9900.Cadmium.location <-
+"ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/1999-2000/LAB06.xpt"
 NHANES.9900.FastQuest.location <-
 "ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/nhanes/1999-2000/PH.xpt"
 
@@ -171,6 +185,8 @@ NHANES.1112.Trigly.df <-
 download.nhanes.file(NHANES.1112.Trigly.location)
 NHANES.1112.Glycohemo.df <-
 download.nhanes.file(NHANES.1112.Glycohemo.location)
+NHANES.1112.Cadmium.df <-
+download.nhanes.file(NHANES.1112.Cadmium.location)
 NHANES.1112.Zinc.df <-
 download.nhanes.file(NHANES.1112.Zinc.location)
 NHANES.1112.FastQuest.df <-
@@ -190,6 +206,8 @@ NHANES.0910.Trigly.df <-
 download.nhanes.file(NHANES.0910.Trigly.location)
 NHANES.0910.Glycohemo.df <-
 download.nhanes.file(NHANES.0910.Glycohemo.location)
+NHANES.0910.Cadmium.df <-
+download.nhanes.file(NHANES.0910.Cadmium.location)
 NHANES.0910.FastQuest.df <-
 download.nhanes.file(NHANES.0910.FastQuest.location)
 NHANES.0910.BM.df <-
@@ -207,6 +225,8 @@ NHANES.0708.Trigly.df <-
 download.nhanes.file(NHANES.0708.Trigly.location)
 NHANES.0708.Glycohemo.df <-
 download.nhanes.file(NHANES.0708.Glycohemo.location)
+NHANES.0708.Cadmium.df <-
+download.nhanes.file(NHANES.0708.Cadmium.location)
 NHANES.0708.FastQuest.df <-
 download.nhanes.file(NHANES.0708.FastQuest.location)
 NHANES.0708.BM.df <-
@@ -224,6 +244,8 @@ NHANES.0506.Trigly.df <-
 download.nhanes.file(NHANES.0506.Trigly.location)
 NHANES.0506.Glycohemo.df <-
 download.nhanes.file(NHANES.0506.Glycohemo.location)
+NHANES.0506.Cadmium.df <-
+download.nhanes.file(NHANES.0506.Cadmium.location)
 NHANES.0506.FastQuest.df <-
 download.nhanes.file(NHANES.0506.FastQuest.location)
 NHANES.0506.BM.df <-
@@ -241,6 +263,8 @@ NHANES.0304.Trigly.df <-
 download.nhanes.file(NHANES.0304.Trigly.location)
 NHANES.0304.Glycohemo.df <-
 download.nhanes.file(NHANES.0304.Glycohemo.location)
+NHANES.0304.Cadmium.df <-
+download.nhanes.file(NHANES.0304.Cadmium.location)
 NHANES.0304.FastQuest.df <-
 download.nhanes.file(NHANES.0304.FastQuest.location)
 NHANES.0304.BM.df <-
@@ -258,6 +282,8 @@ NHANES.0102.Trigly.df <-
 download.nhanes.file(NHANES.0102.Trigly.location)
 NHANES.0102.Glycohemo.df <-
 download.nhanes.file(NHANES.0102.Glycohemo.location)
+NHANES.0102.Cadmium.df <-
+download.nhanes.file(NHANES.0102.Cadmium.location)
 NHANES.0102.FastQuest.df <-
 download.nhanes.file(NHANES.0102.FastQuest.location)
 NHANES.0102.BM.df <-
@@ -275,6 +301,8 @@ NHANES.9900.Trigly.df <-
 download.nhanes.file(NHANES.9900.Trigly.location)
 NHANES.9900.Glycohemo.df <-
 download.nhanes.file(NHANES.9900.Glycohemo.location)
+NHANES.9900.Cadmium.df <-
+download.nhanes.file(NHANES.9900.Cadmium.location)
 NHANES.9900.FastQuest.df <-
 download.nhanes.file(NHANES.9900.FastQuest.location)
 NHANES.9900.BM.df <-
@@ -291,6 +319,7 @@ save(
 	NHANES.1112.FastGlu.df,
 	NHANES.1112.Trigly.df,
 	NHANES.1112.Glycohemo.df,
+	NHANES.1112.Cadmium.df,
 	NHANES.1112.Zinc.df,
 	NHANES.1112.FastQuest.df,
 	NHANES.1112.BM.df,
@@ -301,6 +330,7 @@ save(
 	NHANES.0910.FastGlu.df,
 	NHANES.0910.Trigly.df,
 	NHANES.0910.Glycohemo.df,
+	NHANES.0910.Cadmium.df,
 	NHANES.0910.FastQuest.df,
 	NHANES.0910.BM.df,
 	NHANES.0910.BP.df,
@@ -310,6 +340,7 @@ save(
 	NHANES.0708.FastGlu.df,
 	NHANES.0708.Trigly.df,
 	NHANES.0708.Glycohemo.df,
+	NHANES.0708.Cadmium.df,
 	NHANES.0708.FastQuest.df,
 	NHANES.0708.BM.df,
 	NHANES.0708.BP.df,
@@ -319,6 +350,7 @@ save(
 	NHANES.0506.FastGlu.df,
 	NHANES.0506.Trigly.df,
 	NHANES.0506.Glycohemo.df,
+	NHANES.0506.Cadmium.df,
 	NHANES.0506.FastQuest.df,
 	NHANES.0506.BM.df,
 	NHANES.0506.BP.df,
@@ -328,6 +360,7 @@ save(
 	NHANES.0304.FastGlu.df,
 	NHANES.0304.Trigly.df,
 	NHANES.0304.Glycohemo.df,
+	NHANES.0304.Cadmium.df,
 	NHANES.0304.FastQuest.df,
 	NHANES.0304.BM.df,
 	NHANES.0304.BP.df,
@@ -337,6 +370,7 @@ save(
 	NHANES.0102.FastGlu.df,
 	NHANES.0102.Trigly.df,
 	NHANES.0102.Glycohemo.df,
+	NHANES.0102.Cadmium.df,
 	NHANES.0102.FastQuest.df,
 	NHANES.0102.BM.df,
 	NHANES.0102.BP.df,
@@ -346,6 +380,7 @@ save(
 	NHANES.9900.FastGlu.df,
 	NHANES.9900.Trigly.df,
 	NHANES.9900.Glycohemo.df,
+	NHANES.9900.Cadmium.df,
 	NHANES.9900.FastQuest.df,
 	NHANES.9900.BM.df,
 	NHANES.9900.BP.df,

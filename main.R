@@ -18,7 +18,9 @@ options(survey.lonely.psu = "adjust")
 
 #import data set names and download them into .rda
 #ONLY RUN ONCE. DO NOT RUN AGAIN ONCE .RDA FILE IS IN WORK DIRECTORY 
+####################################
 source("./names_and_download.R")
+####################################
 
 
 #-----------------------------------Load and create final data.frame for plotting
@@ -191,6 +193,7 @@ final <- rbind(A, B, C, D, E, F, G)
 
 #split each variable of interest by YEAR for IGOR
 IGOR_final <- IGOR_frame(final)
+
 
 #-----------------------------------Plot cumulative fasting blood glucose by YEAR
 ggplot(final, aes(sample=final$LBDGLUSI, color=YEAR)) + 

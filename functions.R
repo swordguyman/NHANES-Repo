@@ -12,13 +12,50 @@ download.nhanes.file <- function( ftp.filepath ){
 		# download this as a binary file type
 		mode = "wb"
 	)
-		
+	
 	# the variable 'tf' now contains the full file path 
 	# on the local computer to the specified file
-		
+	
 	read.xport( tf )	# the last line of a function contains what it *returns*
 				# so by putting read.xport as the final line,
 				# this function will return an r data frame
+}
+
+
+
+#-----------------------------------Download and importation function
+download.prior.nhanes <- function(filepath_name){
+	txt_filepath <- paste(filepath_name, '.txt', sep='')
+	sas_filepath <- paste(filepath_name, '.sas', sep='')
+
+	tf1 <- tempfile() #raw data
+	tf2 <- tempfile() #sas file
+
+	download.file(txt_filepath, tf1, mode='wb')
+	download.file(sas_filepath, tf2, mode='wb')
+	
+	#previous error with '\f' read as form feed in Python
+	#solution: replace '\\' with '/'
+	#this should capture any other escape sequences
+	tf1 <- gsub('\\\\', '/', tf1)
+	tf2 <- gsub('\\\\', '/', tf2)
+
+	python_call_string <- 
+	paste('python -c "',
+	'from SAS_to_R_NHANES_converter import *;',
+	"RAW_file = '", tf1, "';",
+	"SAS_file = '", tf2, "';",
+	'write_csv(RAW_file, SAS_file)"', sep='')
+
+	system(python_call_string)
+	
+	#dummy.txt is a 'temporary file' in the sense that it is created in Python
+	#and deleted in R once read.csv() is called.
+	new_data <- read.csv('dummy.txt', header=TRUE)
+	
+	if(file.exists('dummy.txt')) file.remove('dummy.txt')
+	
+	return(new_data)
 }
 
 

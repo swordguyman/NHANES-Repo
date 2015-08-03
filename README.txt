@@ -1,0 +1,2 @@
+link for running python on Windows command prompt: http://stackoverflow.com/questions/4621255/how-do-i-run-a-python-program-in-the-command-prompt-in-windows-7
+R needs to be restarted after the above steps are complete. Use shell() for Windows.

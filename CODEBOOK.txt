@@ -1,0 +1,486 @@
+#---------------------------------------------------------------------------------------
+#NHANES CODEBOOK
+#---------------------------------------------------------------------------------------
+#
+#
+#(variable-name): description
+#	year-range: (name of variable if different; otherwise use -; if missing, use NA): alternate description or notes if applicable
+#		general notes if applicable
+#
+#
+#---------------------------------------------------------------------------------------
+#Variables
+#---------------------------------------------------------------------------------------
+
+*Note that the variable names are based on 2011-2012 naming.
+
+(SEQN): Respondent sequence number.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (-)
+	1982-1984: (-)
+	1976-1980: (-)
+	1971-1974: (-)
+	1966-1970: (-)
+	1963-1965: (-)
+	1959-1962: (-)
+
+(LBDGLUSI): Fasting Glucose (mmol/L).
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-): Plasma glucose (mmol/L).
+	2001-2002: (LBXGLUSI): Plasma glucose (mmol/L).
+	1999-2000: (LBXGLUSI): Plasma glucose (mmol/L).
+	1988-1994: (G1PSI)
+	1982-1984: (HHDI0517, HHDI0520, HHDI0523): First, second, and third venipuncture values. Glucose drink after first drink implies OGTT.
+	1976-1980: (N2LB0466/18): Convert to SI. Might be oral glucose tolerance test.
+	1971-1974: (N1LB0502): Is coded as a range of values.
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (H1DI0057/18): This is in mg/dL. Divide by 18 to get SI units. Might be oral glucose tolerance test.
+
+(LBDINSI): Insulin (pmol/L).
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (LBXINSI)
+	1999-2000: (LBXINSI)
+	1988-1994: (I1PSI)
+	1982-1984: (NA)
+	1976-1980: (NA)
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(LBDTRSI): Triglyceride (mmol/L).
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (TGPSI)
+	1982-1984: (NA): Documentation confirms existence, but variable is missing.
+	1976-1980: (N2LB0426/18): Convert from mg/dL to SI.
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(LBXGH): Glycohemoglobin (%).
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (GHP): Glycated hemoglobin.
+	1982-1984: (NA)
+	1976-1980: (NA)
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(LBDBCDSI): Blood cadmium (nmol/L).
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (NA)
+	1982-1984: (NA)
+	1976-1980: (NA)
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(PHAFSTMN): The time (in minutes) between when the examinee last ate or drank anything other than water and the time of the venipuncture.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (PHPFAST*60): Hours to minutes.
+	1982-1984: (HHDI0526): First venipuncture. Computed as HHMM, where HH is hours and MM is minutes.
+	1976-1980: (N2LB0430*60): Change from hours to minutes.
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (H1DI0060+H1DI0061): Glucose drink is present when adding these two, which may imply oral glucose tolerance (not what we want).
+		This variable exists verbatim in the fasting questionnarie, oral glucose tolerance, and plasma glucose & insulin data sets. We use the first.
+
+(PHAFSTHR): The time (in hours) between when the examinee last ate or drank anything other than water and the time of the venipuncture.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (PHPFAST)
+	1982-1984: (HHDI0526): First venipuncture. Computed as HHMM, where HH is hours and MM is minutes.
+	1976-1980: (N2LB0430)
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: ((H1DI0060+H1DI0061)/60)
+		The existence of this variable is exactly the same as for PHAFSTMN.
+
+(BMXWT): Weight (kg).
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (BMPWT)
+	1982-1984: (HHBM0490)
+	1976-1980: (N2BM0412)
+	1971-1974: (N1BM0260)
+	1966-1970: (H3ED0760*0.453592): Originally in pounds, must multiply to get to kg.
+	1963-1965: (H2ID0783)
+	1959-1962: (H1BM0016*0.453592): Originally in pounds, must multiply to get to kg.
+
+(BMXHT): Standing Height (cm).
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (BMPHT)
+	1982-1984: (HHBM0476)
+	1976-1980: (N2BM0418): Ages 2 and over.
+	1971-1974: (N1BM0266)
+	1966-1970: (H3ED0699)
+	1963-1965: (H2ID0733/10): Originally in mm, must divide to get to cm.
+	1959-1962: (H1BM0013*2.54): Orginally in inches, must multiply to get to cm.
+
+(BMXBMI): Body Mass Index (kg/m**2).
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (BMPBMI)
+	1982-1984: (NA)
+	1976-1980: (NA)
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(BMXWAIST): Waist Circumference (cm).
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (BMPWAIST)
+	1982-1984: (NA)
+	1976-1980: (NA)
+	1971-1974: (NA)
+	1966-1970: (H3ED0737)
+	1963-1965: (H2ID0756/10): Originally in mm, must divide to get to cm.
+	1959-1962: (H1BM0029*2.54): Orginally in inches, must multiply to get to cm.
+
+(BPXSY3): Systolic: Blood pressure (third reading) mm Hg.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (PEP6I1): Ages 5+.
+	1982-1984: (HHPE0511, HHPE0783): Unsure which one is third reading.
+	1976-1980: (N2PE0771): Third reading is done sitting.
+	1971-1974: (N1ME0718): Third reading is done sitting.
+	1966-1970: (H3ED1107, H3ED1127): Second includes imputed data.
+	1963-1965: (NA): Does not exist third reading.
+	1959-1962: (NA)
+
+(BPXDI3): Diastolic: Blood pressure (third reading) mm Hg.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (PEP6I3): Ages 5+.
+	1982-1984: (HHPE0514, HHPE0786): Unsure which is third reading.
+	1976-1980: (N2PE0774): Third reading is done sitting.
+	1971-1974: (N1ME0721): Third reading is done sitting.
+	1966-1970: (H3ED1110, H3ED1130): Second includes imputed data.
+	1963-1965: (NA): Does not exist third reading.
+	1959-1962: (H1CD0061): This is an average of 3 readings, so this cannot be used.
+
+(RIAGENDR): Gender.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (HSSEX)
+	1982-1984: (...0046): Ending in 0046 indicates sex.
+	1976-1980: (...0055): Ending in 0055 indicates sex of examined person.
+	1971-1974: (...104): Ending in 104 indicates sex of examined person. Might need to merge to avoid any missing data.
+	1966-1970: (H3ED0052): Exists as age-sex recode, but still usable.
+	1963-1965: (H2ID0038): Exists as age-sex recode, but still usable.
+	1959-1962: (H1DM0009)
+		This variable exists in some laboratory data sets, but we primarily use the one from the demographics.
+
+(RIDAGEYR): Age in years of the participant at the time of screening. Individuals 80 and over are topcoded at 80 years of age.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-): Topcoded at 85.
+	2003-2004: (-): Topcoded at 85.
+	2001-2002: (-): Topcoded at 85.
+	1999-2000: (-): Topcoded at 85.
+	1988-1994: (HSAGEIR)
+	1982-1984: (...0030): Age in years at interview.
+	1976-1980: (...0047): Age in years at interview.
+	1971-1974: (...101): Age of participant at interview. Might need to merge.
+	1966-1970: (H3ED0050)
+	1963-1965: (NA)
+	1959-1962: (H1DM0006)
+
+(RIDRETH1): Recode of reported race and Hispanic origin information.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (DMARETHN, DMARACER, DMAETHNR): Parameters across all three variables.
+	1982-1984: (NA): Exists but with different parameters.
+	1976-1980: (NA): Exists but with different parameters.
+	1971-1974: (NA): Exists but with different parameters.
+	1966-1970: (NA): Exists but with different parameters.
+	1963-1965: (NA): Exists but with different parameters.
+	1959-1962: (NA): Exists but with different parameters.
+		1: Mexican-American; 2: Other Hispanic; 3: Non-Hispanic White; 4: Non-Hispanic Black; 5; Other race, including multi-racial.
+
+(INDFMIN2): Total family income (reported as a range value in dollars).
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (INDFMINC)
+	2003-2004: (INDFMINC)
+	2001-2002: (INDFMINC)
+	1999-2000: (INDFMINC)
+	1988-1994: (HFF19R): Different values.
+	1982-1984: (...0137): Different values.
+	1976-1980: (...0107): Different values.
+	1971-1974: (...0034): Different values.
+	1966-1970: (H3ED0075): Different values.
+	1963-1965: (H2ID0056): Different values.
+	1959-1962: (H1DM0065): Not only are the codes different, but there is the problem of adjusting for inflation. 
+		Is this value adjusted for inflation?
+
+(INDFMPIR): A ratio of family income to poverty guidelines.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (DMPPIR): Poverty Income Ratio (unimputed income).
+	1982-1984: (NA)
+	1976-1980: (NA)
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(DID040): How old {was SP/were you} when a doctor or other health professional first told {you/him/her} that {you/he/she} had diabetes or sugar diabetes?
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (DID040G)
+	2001-2002: (DID040G)
+	1999-2000: (DIQ040G)
+	1988-1994: (HAD5R)
+	1982-1984: (HHAH0564): Ages 12-74.
+	1976-1980: (N2AH0719): Ages 12-74.
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+		There exists a DID040Q/DIQ040Q with the exact same description but labeled as "Number of years of age.", which is not consistent with the original label of "Age when first told you had diabetes."
+
+(DID060): For how long {have you/has SP} been taking insulin?
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (DID060G)
+	2001-2002: (DID060G)
+	1999-2000: (DIQ060G)
+	1988-1994: (HAD9S): In months, values might be different.
+	1982-1984: (HHAH0590): In years, values might be different.
+	1976-1980: (NA)
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+		Existence of DID060Q/DIQ060Q is the same as for the variable DID040. Need DIQ060U to determine units.
+
+(DIQ050): {Is SP/Are you} now taking insulin?
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (DID070)
+	2005-2006: (DID070)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (HAD6)
+	1982-1984: (HHAH0586)
+	1976-1980: (N2AH0726): Are you now taking insulin injections?
+	1971-1974: (N1GM0489): Do you take insulin?
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (H1DI0009): Values ask how many units do you take. Can merge all into a 'yes' answer.
+
+(DIQ070): {Is SP/Are you} now taking diabetic pills to lower {{his/her}/your} blood sugar? These are sometimes called oral agents or oral hypoglycemic agents.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (HAD10)
+	1982-1984: (HHAH0594)
+	1976-1980: (N2AH0737)
+	1971-1974: (N1GM0490): Do you take any medicine by mouth for diabetes?
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (H1DI0010): Beware, values are slightly different.
+
+(DIQ160): {Have you/Has SP} ever been told by a doctor or other health professional that {you have/SP has} any of the following: prediabetes, impaired fasting glucose, impaired glucose tolerance, borderline diabetes or that {your/her/his} blood sugar is higher than normal but not high enough to be called diabetes or sugar diabetes?
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (NA)
+	2001-2002: (NA)
+	1999-2000: (NA)
+	1988-1994: (NA)
+	1982-1984: (HHAH0566, HHAH0569, HHAH0572): Borderline diabetes, potential diabetes, prediabetes. 
+	1976-1980: (N2AH0715, N2AH0716, N2AH0717): Borderline diabetes, prediabetes, potential diabetes. Which one?
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(DIQ170): {Have you/Has SP} ever been told by a doctor or other health professional that {you have/s/he has} health conditions or a medical or family history that increases {your/his/her} risk for diabetes?
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (NA)
+	2001-2002: (NA)
+	1999-2000: (NA)
+	1988-1994: (NA)
+	1982-1984: (NA)
+	1976-1980: (NA)
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(LBDSZNSI): Serum Zinc (umol/L).
+	2011-2012: (-)
+	2009-2010: (NA)
+	2007-2008: (NA)
+	2005-2006: (NA)
+	2003-2004: (NA)
+	2001-2002: (NA)
+	1999-2000: (NA)
+	1988-1994: (NA)
+	1982-1984: (NA)
+	1976-1980: (N2LB0396*(0.0483)): Convert from ug/dL to umol/L.
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(RIDRETH3): Recode of reported race and Hispanic origin information, with Non-Hispanic Asian Category.
+	2011-2012: (-)
+	2009-2010: (NA)
+	2007-2008: (NA)
+	2005-2006: (NA)
+	2003-2004: (NA)
+	2001-2002: (NA)
+	1999-2000: (NA)
+	1988-1994: (NA)
+	1982-1984: (NA)
+	1976-1980: (NA)
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(RIDEXAGY): Age in years of the participant at the time of examination. Reported for persons aged 2-19 years at the time of screening.
+	2011-2012: (-)
+	2009-2010: (NA)
+	2007-2008: (NA)
+	2005-2006: (NA)
+	2003-2004: (NA)
+	2001-2002: (NA)
+	1999-2000: (NA)
+	1988-1994: (NA)
+	1982-1984: (NA)
+	1976-1980: (NA)
+	1971-1974: (NA)
+	1966-1970: (NA)
+	1963-1965: (NA)
+	1959-1962: (NA)
+
+(YEAR): Range of years of NHANES/Prior NHANES data set.
+	2011-2012: (-)
+	2009-2010: (-)
+	2007-2008: (-)
+	2005-2006: (-)
+	2003-2004: (-)
+	2001-2002: (-)
+	1999-2000: (-)
+	1988-1994: (-)
+	1982-1984: (-)
+	1976-1980: (-)
+	1971-1974: (-)
+	1966-1970: (-)
+	1963-1965: (-)
+	1959-1962: (-)

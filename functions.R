@@ -24,8 +24,13 @@ download.nhanes.file <- function( ftp.filepath ){
 
 
 #-----------------------------------Download and importation function
-download.prior.nhanes <- function(filepath_name){
+download.prior.nhanes <- function(filepath_name, dat_flag=FALSE){
 	txt_filepath <- paste(filepath_name, '.txt', sep='')
+
+	if(dat_flag){ #For NHANES III
+		txt_filepath <- paste(filepath_name, '.dat', sep='')
+	}
+
 	sas_filepath <- paste(filepath_name, '.sas', sep='')
 
 	tf1 <- tempfile() #raw data
@@ -48,7 +53,7 @@ download.prior.nhanes <- function(filepath_name){
 	'write_csv(RAW_file, SAS_file)"', sep='')
 
 	system(python_call_string)
-	
+
 	#dummy.txt is a 'temporary file' in the sense that it is created in Python
 	#and deleted in R once read.csv() is called.
 	new_data <- read.csv('dummy.txt', header=TRUE)

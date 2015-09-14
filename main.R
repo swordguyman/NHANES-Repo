@@ -19,12 +19,20 @@ options(survey.lonely.psu = "adjust")
 #import data set names and download them into .rda
 #ONLY RUN ONCE. DO NOT RUN AGAIN ONCE .RDA FILE IS IN WORK DIRECTORY 
 ####################################
-source("./names_and_download.R")
+#source("./names_and_download.R")
+####################################
+
+
+#import prior nhanes data set names and download them into .rda
+#ONLY RUN ONCE. DO NOT RUN AGAIN ONCE .RDA FILE IS IN WORK DIRECTORY 
+####################################
+#source("./download_prior_nhanes.R")
 ####################################
 
 
 #-----------------------------------Load and create final data.frame for plotting
 load("NHANES.rda") #original datasets
+load("prior_NHANES.rda") #original prior nhanes datasets
 
 #NHANES 2011-2012
 A.demo <- NHANES.1112.Demo.df

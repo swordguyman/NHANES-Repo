@@ -12,6 +12,7 @@ def location_process(location_string):
         return difference+1
 
 
+
 def decode_SAS(sas_file):
     word = 'INPUT'
     variable_flag = False
@@ -32,8 +33,10 @@ def decode_SAS(sas_file):
             elif variable_flag: #once a variable name has been located
                 
                 if found_space:
+                    if letter == ' ':
+                        continue
                 
-                    if letter != ' ' and letter != "\t" and letter != "\r" and letter != "\n":
+                    elif letter != "\t" and letter != "\r" and letter != "\n":
                         location_name += letter
                     
                     else: #once end of variable initialization has been located
@@ -64,9 +67,10 @@ def decode_SAS(sas_file):
     return (variable_list, location_list)
 
 
+
 def write_csv(raw_file_name, sas_file_name):
-    raw_file = open(raw_file_name, 'r')
-    sas_file = open(sas_file_name, 'r')
+    raw_file = open(raw_file_name, 'rb')
+    sas_file = open(sas_file_name, 'rb')
     R_data = open('dummy.txt', 'w')
     
     delimiter_info = decode_SAS(sas_file) #variable, location
@@ -87,7 +91,6 @@ def write_csv(raw_file_name, sas_file_name):
     eof_flag = False
     
     while True:
-        
         for i in range(0, len(locations)):
             length = locations[i]
             data = raw_file.read(length)
@@ -95,20 +98,45 @@ def write_csv(raw_file_name, sas_file_name):
             if data == '': #end of file has been reached
                 eof_flag = True
                 break
+
+            elif '\n' in data:
+                #if observation length is shorter than variable
+                #the rest of the variables after the end of observation will
+                #be written as NA
+                current_pos = int(raw_file.tell())
+                
+                #reset position prior to reading data
+                #tell() has problems with UNIX style line endings
+                #reading as binary file is the solution, 'rb'
+                raw_file.seek(current_pos-length)
+
+                #process of recording NA for extraneous variables
+                if i != (len(locations)-1):
+                    R_data.write(',')
+
+                else:
+                    R_data.write('\n')
+
+                    while raw_file.read(1) != '\n':
+                        pass
             
             else:
                 R_data.write(data)
 
                 if i != (len(locations)-1):
                     R_data.write(',')
-            
+                    
                 else:
-                    R_data.write('\n')
-
-                    #read until newline has been reached
                     #problem when downloading directly from NHANES and downloading in R
                     #downloading directly gives '\r\n' at the end of a line
                     #downloading using R function download.file() gives '\n'
+                    
+                    R_data.write('\n')
+
+                    #if observation length and variable length match, then
+                    #the loop will not be entered
+                    #if the observation length is longer, then the loop will
+                    #read until a newline has been found, i.e., new observation
                     while raw_file.read(1) != '\n':
                         pass
 
@@ -118,5 +146,3 @@ def write_csv(raw_file_name, sas_file_name):
     raw_file.close()
     sas_file.close()
     R_data.close()
-
-

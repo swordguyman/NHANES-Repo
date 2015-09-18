@@ -196,6 +196,28 @@ G <- add_variable_frame(G, "RIDEXAGY", NA)
 G <- add_variable_frame(G, "YEAR", "99-00")
 colnames(G) <- colnames(A)
 
+#NHANES III 1988-1994
+H.lab <- NHANESIII.Lab.df
+H.exam <- NHANESIII.Exam.df
+H.adult <- NHANESIII.Adult.df
+
+#NHANES II 1976-1980
+I.hema <- NHANESII.Hema.df
+I.anthro <- NHANESII.Anthro.df
+I.phys <- NHANESII.Phys.df
+I.quest <- NHANESII.Quest.df
+
+#NHANES I 1971-1974
+J.phys <- NHANESI.Phys.df
+J.med <- NHANESI.Med.df
+J.health <- NHANESI.Health.df
+
+#NHES I 1959-1962
+K.demo <- NHESI.Demo.df
+K.diab <- NHESI.Diab.df
+K.phys <- NHESI.Phys.df
+K.card <- NHESI.Card.df
+
 #Stack all data.frames on top of each other
 final <- rbind(A, B, C, D, E, F, G)
 
